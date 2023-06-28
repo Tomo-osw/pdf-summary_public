@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}PDF Auto Summary | 要約結果 {% endblock %}
+
+{% block active_nav_contact %}extra-style{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <div class="row">
+        <div class="my-div-style">
+            <h2>{{ pdf_link }}の要約結果</h2>
+            <h6>PDF段組み設定： {{ dan }}</h6>
+            <h6>PDF段組み設定： {{ type }}</h6>
+            <h6>出力言語設定： {{ lang }}</h6>
+            <h5>{{ summary }}</h5>
+            <h6>要約文字数： {{ number }}</h6>
+
+            <h2>{{ pdf_link }}に付属している図・表一覧</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}PDF Auto Summary | どんなPDFも自動要約!!{% endblock %}
+
+{% block header%}
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Summarize any PDF as you like!</div>
+        <div class="masthead-heading text-uppercase">PDF Auto Summary</div>
+        <a class="btn btn-primary btn-xl text-uppercase index-button" href="#services">Use Service</a>
+    </div>
+</header>
+{% endblock %}
+
+{% block contents %}
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h3 class="section-heading text-uppercase">Drop PDF,Check checkboxes and start</h3>
+            <h3 class="section-subheading text-muted">ファイルをドラッグアンドドロップ・要約形式を指定して開始ボタンを押してください</h3>
+        </div>
+        <div class="text-center">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="col-sm-4 col-form-label" type="file" accept="application/pdf" name="pdf" ></br>
+                    <input class="col-sm-4 col-form-label" type="number" name="number" placeholder="要約する文字数を入力" required></br>
+                    <div>
+                        <input type="radio" name="dan" class="radio" value="1_dan" checked>1段組み
+                        <input type="radio" name="dan" class="radio" value="2_dan">2段組み
+                    </div>
+                    <div>
+                        <input type="radio" name="type" class="radio" value="all" checked>全体要約
+                        <input type="radio" name="type" class="radio" value="order">各章要約
+                        <input type="radio" name="type" class="radio" value="only_0">概要要約
+                    </div>
+                    <div>
+                        <input type="radio" name="lang" class="radio" value="JP" checked>日本語
+                        <input type="radio" name="lang" class="radio" value="EN">英語
+                        <input type="radio" name="lang" class="radio" value="CN">中国語
+                    </div>
+                    </br>
+                    <input class="btn btn-primary" type="submit" name="submit" value="開始">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

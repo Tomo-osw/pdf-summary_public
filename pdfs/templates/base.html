@@ -1,0 +1,83 @@
+{% load static %}
+
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/startbootstrap-agency-gh-pages.css' %}" rel="stylesheet">
+
+    <!-- My style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+    {% block head %}{% endblock %}
+  </head>
+
+  <body id="page-top">
+	<div id="wrapper">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top {% block active_nav_contact %}{% endblock %}" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'pdfs:index' %}"><img src="{% static 'assets/img/logo.svg' %}" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'pdfs:index' %}#services">Service</a></li>
+                        <li class="nav-item {% block active_inquiry %}{% endblock %}"><a class="nav-link" href="{% url 'pdfs:contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block header%}{% endblock %}
+
+        {% block contents%}{% endblock %}
+
+        <!-- Footer -->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; PDF AutoSummary 2023 </div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="contact" aria-label="Mail"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js'%}"></script>
+  	</div>
+  </body>
+
+</html>

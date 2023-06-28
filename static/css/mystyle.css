@@ -1,0 +1,41 @@
+body, #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.my-div-style {
+    margin-top:6.5rem;
+}
+
+.form-group {
+    margin-top:1rem;
+}
+
+#mainNav.extra-style{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+}
+
+#mainNav.extra-style .navbar-brand {
+    font-size: 1.25em;
+}
+
+#mainNav.extra-style .navbar-brand svg,
+#mainNav.extra-style .navbar-brand img {
+    height: 1.5rem;
+}
+
+.extra-button {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.index-button {
+    background-color: #b6ddac;
+}
